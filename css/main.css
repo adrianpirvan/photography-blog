@@ -1,0 +1,257 @@
+/* ============================================
+   MAIN.CSS — Global styles & page layouts
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --gray-light: #f7f7f5;
+  --gray-medium: #8a8a8a;
+  --gray-border: #e5e5e5;
+  --charcoal: #1a1a1a;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --nav-height: 92px;
+  --content-max: 860px;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--black);
+  background: var(--white);
+  padding-top: var(--nav-height);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ============================================
+   STORIES PAGE
+   ============================================ */
+
+.stories-page {
+  padding-bottom: 80px;
+}
+
+.post {
+  padding-top: 80px;
+}
+
+.post-meta {
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-medium);
+  margin-bottom: 22px;
+  font-weight: 700;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+  max-width: 860px;
+  margin: 0 auto 32px;
+  padding: 0 32px;
+  letter-spacing: -0.015em;
+}
+
+.post-body {
+  text-align: center;
+  max-width: var(--content-max);
+  margin: 0 auto 64px;
+  padding: 0 32px;
+  font-size: 1.0625rem;
+  line-height: 1.82;
+  color: #2c2c2c;
+}
+
+.post-body p + p {
+  margin-top: 0.75em;
+}
+
+.post-body a {
+  border-bottom: 1px solid var(--gray-medium);
+  transition: border-color 0.2s;
+}
+
+.post-body a:hover {
+  border-bottom-color: var(--black);
+}
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+
+.about-page {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 60px;
+  width: 100%;
+}
+
+.about-photo {
+  flex: 0 0 360px;
+  width: 360px;
+  height: 460px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.88;
+  color: #1c1c1c;
+  margin-bottom: 28px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   UNDER CONSTRUCTION OVERLAY
+   ============================================ */
+
+.uc-overlay {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.91);
+  z-index: 1999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.uc-overlay.hidden {
+  display: none;
+}
+
+.uc-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.uc-sub {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .post-title {
+    font-size: 2.2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    padding: 60px 32px;
+    gap: 44px;
+    align-items: flex-start;
+  }
+
+  .about-photo {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+    height: 340px;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --nav-height: 68px;
+  }
+
+  .post {
+    padding-top: 48px;
+  }
+
+  .post-title {
+    font-size: 1.75rem;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .post-body {
+    font-size: 0.9625rem;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    line-height: 1.75;
+  }
+
+  .about-container {
+    padding: 36px 20px;
+    gap: 32px;
+  }
+
+  .about-photo {
+    height: 260px;
+  }
+
+  .about-text p {
+    font-size: 0.9625rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .stories-page {
+    padding-bottom: 56px;
+  }
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="title.prints">Prints &amp; Pixels — adrianpirvan.com</title>
+  <meta name="description" content="Browse a handpicked selection of photos by Adrian Pirvan, available as prints in a few standard sizes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-left">
+    <a href="index.html" class="nav-link" data-i18n="nav.stories">Stories</a>
+    <a href="prints.html" class="nav-link active" data-i18n="nav.prints">Prints</a>
+    <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
+<button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <a href="index.html" class="nav-logo" aria-label="adrian. pirvan — home">
+    <img src="assets/images/Logo/logo.png" alt="adrian. pirvan" class="logo-img">
+  </a>
+
+  <div class="nav-right">
+    <button class="lang-btn" id="lang-btn" aria-label="Switch language">
+      <img class="lang-flag" id="lang-flag" src="assets/images/flag-en.svg" alt="EN">
+      <span class="lang-code" id="lang-code">EN</span>
+    </button>
+    <a href="https://www.instagram.com/adipirvan/" class="nav-icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <button class="nav-icon-btn" onclick="toggleCart()" aria-label="Open cart">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" class="mobile-nav-link" data-i18n="nav.stories">Stories</a>
+  <a href="prints.html" class="mobile-nav-link active" data-i18n="nav.prints">Prints</a>
+  <a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About</a>
+</div>
+
+<!-- ===== CART OVERLAY ===== -->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+
+<!-- ===== CART SIDEBAR ===== -->
+<aside class="cart-sidebar" id="cart-sidebar" role="dialog" aria-label="Shopping cart" aria-modal="true">
+  <div class="cart-header">
+    <h2 data-i18n="cart.title">Your Cart</h2>
+    <button class="cart-close-btn" onclick="closeCart()" aria-label="Close cart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <p class="cart-empty" data-i18n="cart.empty">Your cart is empty</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label" data-i18n="cart.total">Total</span>
+      <span class="cart-total-amount" id="cart-total-amount">€0.00</span>
+    </div>
+    <button class="btn-checkout" data-i18n="cart.checkout">Proceed to Checkout</button>
+  </div>
+</aside>
+
+<!-- ===== HERO ===== -->
+<section class="prints-hero" aria-labelledby="prints-heading">
+  <h1 class="hero-title" id="prints-heading" data-i18n-html="hero.title">Prints<br>&amp; Pixels</h1>
+  <p class="hero-description" data-i18n="hero.desc">Browse a handpicked selection of my photos, available as prints in a few standard sizes ready for your walls</p>
+</section>
+
+<!-- ===== PRODUCT GRID ===== -->
+<section class="products-section" aria-label="Available prints">
+  <div class="products-grid">
+
+    <div class="product-card" onclick="openModal('fog')" role="button" tabindex="0" aria-label="View The Fog print details" onkeydown="if(event.key==='Enter')openModal('fog')">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://picsum.photos/900/600?random=13" alt="The Fog — misty pine forest" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h2 class="product-name" data-i18n="product.fog.name">The Fog</h2>
+        <p class="product-price">from €80.00</p>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('heart')" role="button" tabindex="0" aria-label="View The Heart print details" onkeydown="if(event.key==='Enter')openModal('heart')">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://picsum.photos/900/600?random=14" alt="The Heart — barn on misty hillside" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h2 class="product-name" data-i18n="product.heart.name">The Heart</h2>
+        <p class="product-price">from €80.00</p>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('snow')" role="button" tabindex="0" aria-label="View The Snow print details" onkeydown="if(event.key==='Enter')openModal('snow')">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://picsum.photos/900/600?random=15" alt="The Snow — open white landscape" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h2 class="product-name" data-i18n="product.snow.name">The Snow</h2>
+        <p class="product-price">from €80.00</p>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('light')" role="button" tabindex="0" aria-label="View The Light print details" onkeydown="if(event.key==='Enter')openModal('light')">
+      <div class="product-img-wrap">
+        <img class="product-img" src="https://picsum.photos/900/600?random=16" alt="The Light — golden hour through storm clouds" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h2 class="product-name" data-i18n="product.light.name">The Light</h2>
+        <p class="product-price">from €80.00</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PRODUCT MODAL OVERLAY ===== -->
+<div class="modal-overlay" id="product-modal-overlay"></div>
+
+<!-- ===== PRODUCT MODAL ===== -->
+<div class="product-modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-inner">
+
+    <!-- Left: sticky image -->
+    <div class="modal-img-side">
+      <img id="modal-img" src="" alt="">
+    </div>
+
+    <!-- Right: product info -->
+    <div class="modal-info-side">
+
+      <div class="modal-top-bar">
+        <nav class="modal-breadcrumb" aria-label="Breadcrumb">
+          <a href="prints.html" data-i18n="modal.breadcrumb">Prints</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span id="modal-breadcrumb-name">Product</span>
+        </nav>
+        <button class="modal-close-btn" onclick="closeModal()" aria-label="Close product detail">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <h2 class="modal-product-title" id="modal-title">Product Title</h2>
+      <p class="modal-product-price" id="modal-price">from €80.00</p>
+
+      <div class="modal-field-label" data-i18n="modal.size.label">Size:</div>
+      <select class="modal-size-select" id="modal-size" aria-label="Select print size">
+        <option value="" data-i18n="modal.size.select">Select Size</option>
+      </select>
+
+      <div class="modal-qty-row">
+        <div class="qty-controls" role="group" aria-label="Quantity">
+          <button class="qty-btn" onclick="changeQty(-1)" aria-label="Decrease quantity">&minus;</button>
+          <span class="qty-display" id="modal-qty" aria-live="polite">1</span>
+          <button class="qty-btn" onclick="changeQty(1)" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="btn-add-cart" id="modal-add-btn" onclick="addToCartFromModal()" data-i18n="modal.add">Add To Cart</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== UNDER CONSTRUCTION OVERLAY ===== -->
+<div class="uc-overlay" aria-live="polite">
+  <p class="uc-title">Under Construction</p>
+  <span class="uc-sub">This page is coming soon</span>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

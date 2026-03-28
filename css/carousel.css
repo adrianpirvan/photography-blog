@@ -1,0 +1,233 @@
+/* ============================================
+   CAROUSEL.CSS — Horizontal photo carousel
+   ============================================ */
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 8px 0 0;
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.3) 60%, transparent 100%);
+}
+
+.carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.3) 60%, transparent 100%);
+}
+
+.photo-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  align-items: stretch;
+  height: 58vh;
+  min-height: 300px;
+  max-height: 600px;
+  touch-action: pan-x;  /* browser owns horizontal scroll natively; prevents gesture conflict on mobile */
+}
+
+/* Smooth scrolling — toggled off during drag */
+.photo-carousel.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar cross-browser */
+.photo-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.photo-carousel.is-dragging {
+  cursor: grabbing;
+}
+
+/* Individual carousel images */
+.carousel-img {
+  flex: 0 0 calc((46vw - 6px) * var(--w-mult, 1));
+  width: calc((46vw - 6px) * var(--w-mult, 1));
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  /* pointer-events enabled so clicks work; drag threshold handled in JS */
+}
+
+/* Edge spacing — gives editorial feel */
+.photo-carousel::before,
+.photo-carousel::after {
+  content: '';
+  display: block;
+  flex: 0 0 0;
+  width: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .photo-carousel {
+    height: 48vw;
+    min-height: 220px;
+    max-height: 460px;
+  }
+
+  .carousel-img {
+    flex: 0 0 calc(70vw * var(--w-mult, 1));
+    width: calc(70vw * var(--w-mult, 1));
+  }
+}
+
+
+@media (max-width: 600px) {
+  .photo-carousel {
+    height: 62vw;
+    min-height: 200px;
+    max-height: 340px;
+    gap: 8px;
+  }
+
+  .carousel-img {
+    flex: 0 0 calc(86vw * var(--w-mult, 1));
+    width: calc(86vw * var(--w-mult, 1));
+  }
+
+  .carousel-wrapper::before,
+  .carousel-wrapper::after {
+    display: none;
+  }
+}
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lb-img {
+  display: block;
+  max-width: 92vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Navigation arrows */
+.lb-prev,
+.lb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #111;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.lb-prev { left: 20px; }
+.lb-next { right: 20px; }
+
+.lb-prev:hover,
+.lb-next:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.lb-prev.hidden,
+.lb-next.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Close button */
+.lb-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #111;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lb-close:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* Counter */
+.lb-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.4);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* Mobile: full-width arrows closer to edges */
+@media (max-width: 600px) {
+  .lb-prev { left: 10px; }
+  .lb-next { right: 10px; }
+
+  .lb-prev,
+  .lb-next {
+    width: 40px;
+    height: 40px;
+  }
+}
