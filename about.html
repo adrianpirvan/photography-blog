@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="title.about">About — adrianpirvan.com</title>
   <meta name="description" content="Adrian Pirvan — photographer. A quiet space for photos and the stories they carry.">
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adrianpirvan.com/about.html">
+  <meta property="og:title" content="About — adrianpirvan.com">
+  <meta property="og:description" content="Adrian Pirvan — photographer. A quiet space for photos and the stories they carry.">
+  <meta property="og:image" content="https://adrianpirvan.com/assets/images/Logo/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About — adrianpirvan.com">
+  <meta name="twitter:description" content="Adrian Pirvan — photographer. A quiet space for photos and the stories they carry.">
+  <meta name="twitter:image" content="https://adrianpirvan.com/assets/images/Logo/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -13,6 +23,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/nav.css">
+  <!-- Google Analytics (blocked until cookie consent) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { analytics_storage: 'denied' });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BCDQ8RXC4"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-0BCDQ8RXC4');
+  </script>
+  <link rel="stylesheet" href="css/cookie-consent.css">
 </head>
 <body>
 
@@ -105,5 +127,15 @@
 <script src="js/i18n.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/nav.js"></script>
+
+<!-- ===== COOKIE CONSENT BANNER ===== -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>This site uses cookies to understand how visitors use it.</p>
+  <div class="cookie-banner-actions">
+    <button class="cookie-btn cookie-btn-decline" onclick="cookieDecline()">Decline</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()">Accept</button>
+  </div>
+</div>
+<script src="js/cookie-consent.js"></script>
 </body>
 </html>
