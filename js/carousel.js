@@ -199,7 +199,7 @@ document.addEventListener('posts:loaded', () => {
 
     // ===== CLICK TO OPEN LIGHTBOX =====
     const imgs = Array.from(carousel.querySelectorAll('.carousel-img'));
-    const lbData = imgs.map(img => ({ src: img.src, alt: img.alt }));
+    const lbData = imgs.map(img => ({ src: img.dataset.hdSrc || img.src, alt: img.alt }));
 
     imgs.forEach((img, index) => {
       // Mouse click — only if not a drag

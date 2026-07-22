@@ -46,6 +46,13 @@
     return { title, category, date, bodyHtml, photos: photoFiles };
   }
 
+  // ─── srcset builder ─────────────────────────────────────────────────────────
+
+  function webpSrcset(src) {
+    const base = src.replace(/\.[^.]+$/, '');
+    return `${base}-800.webp 800w, ${base}-1600.webp 1600w, ${base}-2400.webp 2400w`;
+  }
+
   // ─── Date formatter ─────────────────────────────────────────────────────────
 
   const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -66,7 +73,8 @@
   function buildPostHTML(data, id, index) {
     const imgs = data.photos.map((photo, i) => {
       const loading = (index === 0 && i < 2) ? 'eager' : 'lazy';
-      return `<img class="carousel-img" src="${photo.src}" alt="${data.title}" loading="${loading}" draggable="false"${photo.style}>`;
+      const hdSrc = photo.src.replace(/\.[^.]+$/, '') + '-2400.webp';
+      return `<img class="carousel-img" src="${photo.src}" srcset="${webpSrcset(photo.src)}" sizes="(max-width: 600px) 86vw, (max-width: 900px) 70vw, 46vw" data-hd-src="${hdSrc}" alt="${data.title}" loading="${loading}" draggable="false"${photo.style}>`;
     }).join('\n        ');
 
     return `
