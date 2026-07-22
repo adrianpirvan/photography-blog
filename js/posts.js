@@ -76,9 +76,10 @@
   function buildInlineGallery(section, loading) {
     if (section.layout === 'lookbook') return buildLookbookGallery(section.images, loading);
 
-    const imgs = section.images.map(({ src }) =>
-      `<img class="gallery-img" src="${src}" alt="" loading="${loading}" draggable="false">`
-    ).join('');
+    const imgs = section.images.map(({ src }) => {
+      const srcsetAttr = src.startsWith('http') ? '' : ` srcset="${webpSrcset(src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
+      return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="${loading}" draggable="false">`;
+    }).join('');
     return `<div class="inline-gallery">${imgs}</div>`;
   }
 
@@ -87,13 +88,22 @@
     const featured = images[featIdx >= 0 ? featIdx : Math.floor(images.length / 2)];
     const thumbs   = images.filter(img => img !== featured);
 
-    const featured_html = `<img class="gallery-img lb-featured" src="${featured.src}" alt="" loading="${loading}" draggable="false">`;
+    const featSrcset = featured.src.startsWith('http') ? '' : ` srcset="${webpSrcset(featured.src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
+    const featured_html = `<img class="gallery-img lb-featured" src="${featured.src}"${featSrcset} alt="" loading="${loading}" draggable="false">`;
 
-    const thumbs_html = thumbs.map(({ src }) =>
-      `<img class="gallery-img" src="${src}" alt="" loading="lazy" draggable="false">`
-    ).join('');
+    const thumbs_html = thumbs.map(({ src }) => {
+      const srcsetAttr = src.startsWith('http') ? '' : ` srcset="${webpSrcset(src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
+      return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="lazy" draggable="false">`;
+    }).join('');
 
     return `<div class="inline-gallery inline-gallery--lookbook">${featured_html}${thumbs_html}</div>`;
+  }
+
+  // ─── srcset builder ─────────────────────────────────────────────────────────
+
+  function webpSrcset(src) {
+    const base = src.replace(/\.[^.]+$/, '');
+    return `${base}-800.webp 800w, ${base}-1600.webp 1600w, ${base}-2400.webp 2400w`;
   }
 
   // ─── Date formatter ─────────────────────────────────────────────────────────
@@ -136,7 +146,8 @@
       <div class="photo-carousel" role="region" aria-label="Post photos, scroll horizontally">
         ${data.photos.map((photo, i) => {
           const loading = (index === 0 && i < 2) ? 'eager' : 'lazy';
-          return `<img class="carousel-img" src="${photo.src}" alt="${data.title}" loading="${loading}" draggable="false"${photo.style}>`;
+          const hdSrc = photo.src.replace(/\.[^.]+$/, '') + '-2400.webp';
+          return `<img class="carousel-img" src="${photo.src}" srcset="${webpSrcset(photo.src)}" sizes="(max-width: 600px) 86vw, (max-width: 900px) 70vw, 46vw" data-hd-src="${hdSrc}" alt="${data.title}" loading="${loading}" draggable="false"${photo.style}>`;
         }).join('\n        ')}
       </div>
     </div>` : '';
