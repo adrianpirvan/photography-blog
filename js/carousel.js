@@ -103,6 +103,22 @@ document.addEventListener('posts:loaded', () => {
 
   const carousels = document.querySelectorAll('.photo-carousel');
 
+  // ============================================================
+  // INLINE GALLERIES — click-to-lightbox (per gallery block)
+  // ============================================================
+
+  document.querySelectorAll('.inline-gallery').forEach(gallery => {
+    const imgs = Array.from(gallery.querySelectorAll('.gallery-img'));
+    const lbData = imgs.map(img => ({ src: img.src, alt: img.alt }));
+    imgs.forEach((img, index) => {
+      img.addEventListener('click', () => openLightbox(lbData, index));
+    });
+  });
+
+  // ============================================================
+  // CAROUSELS — wheel scroll + drag + click-to-open
+  // ============================================================
+
   carousels.forEach(carousel => {
     let isDragging   = false;
     let dragStartX   = 0;

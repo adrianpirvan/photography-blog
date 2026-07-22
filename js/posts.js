@@ -25,14 +25,8 @@
     const category  = catMatch  ? catMatch[1].trim()  : '';
     const date      = dateMatch ? dateMatch[1].trim() : '';
 
-    // Body → split on blank lines, wrap each chunk in <p>
-    const bodyHtml = body
-      .split(/\n\n+/)
-      .map(p => p.trim())
-      .filter(Boolean)
-      .map(p => p.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'))
-      .map(p => `<p>${p}</p>`)
-      .join('');
+    // Body → parse into sections (text blocks and inline galleries)
+    const bodySections = parseBodySections(body, slug);
 
     // Photo list: lines like "- photos/foo.jpg" or "- photos/foo.jpg 0.8"
     const photoFiles = (photos.match(/- photos\/[^\r\n]+/g) || [])
@@ -43,7 +37,63 @@
         return { src, style };
       });
 
-    return { title, category, date, bodyHtml, photos: photoFiles };
+    return { title, category, date, bodySections, photos: photoFiles };
+  }
+
+  // ─── Inline gallery parser ───────────────────────────────────────────────────
+
+  function parseBodySections(body, slug) {
+    const sections = [];
+    const galleryRe = /\[\[gallery([^\]]*)\]\]([\s\S]*?)\[\[\/gallery\]\]/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = galleryRe.exec(body)) !== null) {
+      const textBefore = body.slice(lastIndex, match.index).trim();
+      if (textBefore) sections.push({ type: 'text', content: textBefore });
+
+      const layout = match[1].trim() || 'default';
+      const images = match[2].trim().split(/\r?\n/)
+        .map(l => l.trim())
+        .filter(Boolean)
+        .map(line => {
+          const featured = line.startsWith('*');
+          const raw = featured ? line.slice(1) : line;
+          const src = raw.startsWith('http') ? raw : `content/${slug}/${raw}`;
+          return { src, featured };
+        });
+
+      sections.push({ type: 'gallery', layout, images });
+      lastIndex = match.index + match[0].length;
+    }
+
+    const remaining = body.slice(lastIndex).trim();
+    if (remaining) sections.push({ type: 'text', content: remaining });
+
+    return sections;
+  }
+
+  function buildInlineGallery(section, loading) {
+    if (section.layout === 'lookbook') return buildLookbookGallery(section.images, loading);
+
+    const imgs = section.images.map(({ src }) =>
+      `<img class="gallery-img" src="${src}" alt="" loading="${loading}" draggable="false">`
+    ).join('');
+    return `<div class="inline-gallery">${imgs}</div>`;
+  }
+
+  function buildLookbookGallery(images, loading) {
+    const featIdx  = images.findIndex(img => img.featured);
+    const featured = images[featIdx >= 0 ? featIdx : Math.floor(images.length / 2)];
+    const thumbs   = images.filter(img => img !== featured);
+
+    const featured_html = `<img class="gallery-img lb-featured" src="${featured.src}" alt="" loading="${loading}" draggable="false">`;
+
+    const thumbs_html = thumbs.map(({ src }) =>
+      `<img class="gallery-img" src="${src}" alt="" loading="lazy" draggable="false">`
+    ).join('');
+
+    return `<div class="inline-gallery inline-gallery--lookbook">${featured_html}${thumbs_html}</div>`;
   }
 
   // ─── Date formatter ─────────────────────────────────────────────────────────
@@ -63,22 +113,40 @@
 
   // ─── HTML builders ──────────────────────────────────────────────────────────
 
-  function buildPostHTML(data, id, index) {
-    const imgs = data.photos.map((photo, i) => {
-      const loading = (index === 0 && i < 2) ? 'eager' : 'lazy';
-      return `<img class="carousel-img" src="${photo.src}" alt="${data.title}" loading="${loading}" draggable="false"${photo.style}>`;
-    }).join('\n        ');
+  function buildPostHTML(data, id, slug, index) {
+    // Render body sections (alternating text blocks and inline galleries)
+    const bodyContent = data.bodySections.map((section, si) => {
+      if (section.type === 'gallery') {
+        const loading = (index === 0 && si === 0) ? 'eager' : 'lazy';
+        return buildInlineGallery(section, loading);
+      }
+      const html = section.content
+        .split(/\n\n+/)
+        .map(p => p.trim())
+        .filter(Boolean)
+        .map(p => p.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'))
+        .map(p => `<p>${p}</p>`)
+        .join('');
+      return `<div class="post-body">${html}</div>`;
+    }).join('');
 
-    return `
-  <article class="post" id="${id}">
-    <p class="post-meta">${data.category} • ${data.date}</p>
-    <h1 class="post-title">${data.title}</h1>
-    <div class="post-body">${data.bodyHtml}</div>
+    // Trailing carousel — only rendered for posts using the old photo-list format
+    const carouselHtml = data.photos.length > 0 ? `
     <div class="carousel-wrapper">
       <div class="photo-carousel" role="region" aria-label="Post photos, scroll horizontally">
-        ${imgs}
+        ${data.photos.map((photo, i) => {
+          const loading = (index === 0 && i < 2) ? 'eager' : 'lazy';
+          return `<img class="carousel-img" src="${photo.src}" alt="${data.title}" loading="${loading}" draggable="false"${photo.style}>`;
+        }).join('\n        ')}
       </div>
-    </div>
+    </div>` : '';
+
+    return `
+  <article class="post" id="${id}" data-slug="${slug}">
+    <p class="post-meta">${data.category} • ${data.date}</p>
+    <h1 class="post-title">${data.title}</h1>
+    ${bodyContent}
+    ${carouselHtml}
   </article>`;
   }
 
@@ -128,7 +196,7 @@
       }));
 
       // Render posts
-      main.innerHTML = posts.map((p, i) => buildPostHTML(p.data, p.id, i)).join('');
+      main.innerHTML = posts.map((p, i) => buildPostHTML(p.data, p.id, p.slug, i)).join('');
 
       // Rebuild timeline markers from live post data
       buildTimelineMarkers(posts);

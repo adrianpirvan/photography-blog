@@ -119,6 +119,84 @@
 }
 
 /* ============================================
+   INLINE GALLERY (2-column masonry)
+   ============================================ */
+
+.inline-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 32px;
+  margin-bottom: 64px;
+}
+
+.gallery-img {
+  flex: 1 1 auto;
+  height: 320px;
+  min-width: 120px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.gallery-img:hover {
+  opacity: 0.92;
+}
+
+/* ---- Lookbook variant ---- */
+
+.inline-gallery--lookbook {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
+
+.inline-gallery--lookbook .gallery-img {
+  width: 100%;
+  height: auto;
+  flex: none;
+  min-width: 0;
+}
+
+.inline-gallery--lookbook .lb-featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media (max-width: 900px) {
+  .gallery-img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .inline-gallery {
+    gap: 4px;
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
+  .gallery-img {
+    height: 160px;
+    min-width: 80px;
+  }
+
+  .inline-gallery--lookbook {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inline-gallery--lookbook .gallery-img {
+    height: auto;
+  }
+
+  .inline-gallery--lookbook .lb-featured {
+    grid-column: 1 / -1;
+    grid-row: span 1;
+  }
+}
+
+/* ============================================
    LIGHTBOX
    ============================================ */
 
