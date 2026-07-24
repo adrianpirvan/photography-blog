@@ -12,14 +12,13 @@ Seen from above, it appeared as a tiny old neighbourhood crammed onto a peninsul
 From the ground, even better. Narrow streets, quiet, real people just living. At the end of the road, a half-rusted fence was the only thing separating the city from the Atlantic. From there, steps cut into the rock leading down to the water. Looking back towards the houses, some facades were freshly renovated in a pure white, while others had been stripped bare by wind, salt, and time.
 One group of locals had claimed the flattest part of the rock with the quiet authority of people who have been doing this every Sunday. Towels and chairs spread around, talking about everything and nothing, the way you do when you have nowhere to be. We watched for a while from above. Nobody acknowledged us. Nobody needed to. We tried not to spoil it, and not that all my five readers are about to take the little neighbourhood by storm ruining everyone's Sundays, but I'd rather keep it a secret... or at least secret enough for anyone not looking hard enough. You have Google Maps, don't you?
 
-[[gallery]]
-photos/1/DSCF8939.JPG
-photos/1/DSCF8949.JPG
-photos/1/DSCF8957.JPG
-photos/1/DSCF8962.JPG
-photos/1/DSCF8971.JPG
-photos/1/DSCF8983.JPG
-photos/1/DSCF9000.JPG
+[[gallery lookbook]]
+photos/1/DSCF8934.jpg
+photos/1/DSCF8957-2.jpg
+*photos/1/DSCF8969.jpg
+photos/1/DSCF8984.jpg
+photos/1/DSCF9000.jpg
+photos/1/DSCF9003.jpg
 [[/gallery]]
 
 Standing there, I had a strange moment of genuine confusion. For a while I was unsure which country I was in. Every single thing I was looking at, my brain was incorrectly labelling "Italy". It took a while to convince myself otherwise. Writing this, I'm still not fully convinced it wasn't.

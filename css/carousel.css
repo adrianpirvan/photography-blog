@@ -144,29 +144,57 @@
   opacity: 0.92;
 }
 
-/* ---- Lookbook variant ---- */
+/* ---- Lookbook variant — featured left, thumbs right ---- */
 
 .inline-gallery--lookbook {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: start;
+  display: flex;
+  gap: 8px;
+  height: 648px;
+  overflow: hidden;
+  padding: 0 64px;
 }
 
-.inline-gallery--lookbook .gallery-img {
-  width: 100%;
-  height: auto;
+.inline-gallery--lookbook .lb-featured {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
   flex: none;
   min-width: 0;
 }
 
-.inline-gallery--lookbook .lb-featured {
+.lb-thumbs {
+  flex: 1;
+  min-width: 0;
+  height: 648px; /* explicit height so 1fr rows compute correctly */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.lb-thumbs .gallery-img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.lb-thumbs .gallery-img:nth-child(2) {
   grid-column: span 2;
-  grid-row: span 2;
 }
 
 @media (max-width: 900px) {
   .gallery-img {
     height: 240px;
+  }
+
+  .inline-gallery--lookbook {
+    height: 488px;
+  }
+
+  .lb-thumbs {
+    height: 488px;
   }
 }
 
@@ -183,16 +211,18 @@
   }
 
   .inline-gallery--lookbook {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .inline-gallery--lookbook .gallery-img {
+    flex-direction: column;
     height: auto;
   }
 
   .inline-gallery--lookbook .lb-featured {
-    grid-column: 1 / -1;
-    grid-row: span 1;
+    width: 100%;
+    height: 280px;
+  }
+
+  .lb-thumbs {
+    height: auto;
+    overflow: visible;
   }
 }
 

@@ -96,7 +96,7 @@
       return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="lazy" draggable="false">`;
     }).join('');
 
-    return `<div class="inline-gallery inline-gallery--lookbook">${featured_html}${thumbs_html}</div>`;
+    return `<div class="inline-gallery inline-gallery--lookbook">${featured_html}<div class="lb-thumbs">${thumbs_html}</div></div>`;
   }
 
   // ─── srcset builder ─────────────────────────────────────────────────────────
