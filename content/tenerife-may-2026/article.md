@@ -1,4 +1,4 @@
-# The Beauty of Inconvenience | and Other Things "Worth Missing"
+# The Beauty of Inconvenience | and Other Things Worth Missing
 
 **Category:** Travel
 **Date:** May '26
