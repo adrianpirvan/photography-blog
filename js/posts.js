@@ -58,9 +58,11 @@
         .filter(Boolean)
         .map(line => {
           const featured = line.startsWith('*');
-          const raw = featured ? line.slice(1) : line;
-          const src = raw.startsWith('http') ? raw : `content/${slug}/${raw}`;
-          return { src, featured };
+          const rest     = featured ? line.slice(1) : line;
+          const parts    = rest.trim().split(/\s+/);
+          const src      = parts[0].startsWith('http') ? parts[0] : `content/${slug}/${parts[0]}`;
+          const position = parts[1] || null;
+          return { src, featured, position };
         });
 
       sections.push({ type: 'gallery', layout, images });
@@ -74,16 +76,17 @@
   }
 
   function buildInlineGallery(section, loading) {
-    if (section.layout === 'lookbook') return buildLookbookGallery(section.images, loading);
+    if (section.layout === 'lookbook' || section.layout === 'lookbook-alt') return buildLookbookGallery(section.images, loading, section.layout);
 
-    const imgs = section.images.map(({ src }) => {
+    const imgs = section.images.map(({ src, position }) => {
       const srcsetAttr = src.startsWith('http') ? '' : ` srcset="${webpSrcset(src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
-      return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="${loading}" draggable="false">`;
+      const posStyle   = position ? ` style="object-position: ${position}"` : '';
+      return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="${loading}" draggable="false"${posStyle}>`;
     }).join('');
     return `<div class="inline-gallery">${imgs}</div>`;
   }
 
-  function buildLookbookGallery(images, loading) {
+  function buildLookbookGallery(images, loading, layout = 'lookbook') {
     const featIdx  = images.findIndex(img => img.featured);
     const featured = images[featIdx >= 0 ? featIdx : Math.floor(images.length / 2)];
     const thumbs   = images.filter(img => img !== featured);
@@ -91,12 +94,13 @@
     const featSrcset = featured.src.startsWith('http') ? '' : ` srcset="${webpSrcset(featured.src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
     const featured_html = `<img class="gallery-img lb-featured" src="${featured.src}"${featSrcset} alt="" loading="${loading}" draggable="false">`;
 
-    const thumbs_html = thumbs.map(({ src }) => {
+    const thumbs_html = thumbs.map(({ src, position }) => {
       const srcsetAttr = src.startsWith('http') ? '' : ` srcset="${webpSrcset(src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
-      return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="lazy" draggable="false">`;
+      const posStyle   = position ? ` style="object-position: ${position}"` : '';
+      return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="lazy" draggable="false"${posStyle}>`;
     }).join('');
 
-    return `<div class="inline-gallery inline-gallery--lookbook">${featured_html}<div class="lb-thumbs">${thumbs_html}</div></div>`;
+    return `<div class="inline-gallery inline-gallery--${layout}">${featured_html}<div class="lb-thumbs">${thumbs_html}</div></div>`;
   }
 
   // ─── srcset builder ─────────────────────────────────────────────────────────

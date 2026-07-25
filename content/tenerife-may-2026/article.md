@@ -5,12 +5,12 @@
 
 ---
 
-When I'm bored I browse Google Maps in satellite view, which is a rather complicated, time-consuming, inefficient, and frankly stupid way to discover interesting places, except it keeps proving surprisingly effective. That’s exactly how I found one of the few places on this island (Tenerife) that clearly hadn’t been ruined… yet.
+When bored, I browse Google Maps in satellite view. That's my complicated, inefficient, and rather stupid way of discovering interesting places in areas I'm about to visit. Which is exactly how I found one of the few places on this island called Tenerife which hasn’t been ruined… yet.
 
-Seen from above, it appeared as a tiny old neighbourhood crammed onto a peninsula, square-ish houses with green and red roofs stacked against the cliff edge, covering every inch of rock available as if no space was meant to go to waste.
+Seen from above, it looked like a tiny old neighbourhood crammed onto a peninsula, every inch of rock available covered by squarish houses with green and red roofs, stacked against the cliff edge as if empty space was offensive.
 
-From the ground, even better. Narrow streets, quiet, real people just living. At the end of the road, a half-rusted fence was the only thing separating the city from the Atlantic. From there, steps cut into the rock leading down to the water. Looking back towards the houses, some facades were freshly renovated in a pure white, while others had been stripped bare by wind, salt, and time.
-One group of locals had claimed the flattest part of the rock with the quiet authority of people who have been doing this every Sunday. Towels and chairs spread around, talking about everything and nothing, the way you do when you have nowhere to be. We watched for a while from above. Nobody acknowledged us. Nobody needed to. We tried not to spoil it, and not that all my five readers are about to take the little neighbourhood by storm ruining everyone's Sundays, but I'd rather keep it a secret... or at least secret enough for anyone not looking hard enough. You have Google Maps, don't you?
+From the ground, even better. Narrow streets, quiet, real people just living. At the end of the road, a half-rusted fence was the only thing separating the city from the Atlantic. From there, steps cut into the rock leading down to the water. Looking back towards the houses, some facades had been freshly painted white, while others had been stripped bare by wind, salt, and time.
+One group of locals had claimed the flattest part of the rock with the quiet authority of people who had been doing this every Sunday. Towels and chairs spread around, talking about everything and nothing, the way you do when you have nowhere to be. We watched for a while from above. Nobody acknowledged us. Nobody needed to. We tried not to spoil it, and not that all my five readers are about to take the little neighbourhood by storm ruining everyone's Sundays, but I'd rather keep it a secret... or at least secret enough for anyone not looking hard enough. You have Google Maps, don't you?
 
 [[gallery lookbook]]
 photos/1/DSCF8934.jpg
@@ -31,17 +31,19 @@ Kill a tourist.
 
 Suddenly very aware of how quiet the path was. Decided this was a good moment to be somewhere else. Walked a little faster after that, like, purposefully. Unironically, forgot to take any photos.
 
-[[gallery]]
-https://picsum.photos/seed/tenerife5/1200/800
-https://picsum.photos/seed/tenerife6/900/1100
-https://picsum.photos/seed/tenerife7/1200/850
-https://picsum.photos/seed/tenerife16/900/1200
-https://picsum.photos/seed/tenerife17/1200/800
-[[/gallery]]
-
 That guy wasn't the only one with a bad temper that week. The weather had strong opinions too. We came with a high-level plan but ended up improvising every day, chasing the sunny side of the island and dodging the rain.
 
 Because of the above, Teide, the volcano, the whole reason half the people are there, guess what... we never made it to the top. Ended up at Chinyero instead. No crowds, no gift shop, just an enormous black wasteland surrounded by pine forests and quiet paths. I would even argue that from there, the view of Teide was better, looming in the background of its little sibling.
+
+[[gallery lookbook-alt]]
+*photos/2/DSCF9268.jpg
+photos/2/DSCF9335.jpg
+photos/2/DSCF9354-2.jpg top
+photos/2/DSCF9389.jpg
+photos/2/DSCF9393.jpg
+photos/2/DSCF9401.jpg top
+photos/2/DSCF9426.jpg top
+[[/gallery]]
 
 The hotel had a few things going for it, but the main one was its view over the Los Gigantes cliffs, which, as our boat guide helpfully clarified later, are in fact gigantic. (mind = blown) In truth, probably the most spectacular natural feature on the island. Getting that view was an undeniably excellent decision. Every evening the sunset turned the huge wall into a candlelight, accompanying us at dinner.
 
