@@ -131,7 +131,8 @@
       ? `<div class="lbv2-below">${buildImgs(belowPhotos)}</div>`
       : '';
 
-    return `<div class="inline-gallery inline-gallery--lookbook-v2"><div class="lbv2-top">${featured_html}<div class="lbv2-right" data-count="${rightPhotos.length}">${buildImgs(rightPhotos)}</div></div>${below_html}</div>`;
+    const topClass = rightPhotos.length === 1 ? 'lbv2-top lbv2-top--single' : 'lbv2-top';
+    return `<div class="inline-gallery inline-gallery--lookbook-v2"><div class="${topClass}">${featured_html}<div class="lbv2-right" data-count="${rightPhotos.length}">${buildImgs(rightPhotos)}</div></div>${below_html}</div>`;
   }
 
   // ─── srcset builder ─────────────────────────────────────────────────────────

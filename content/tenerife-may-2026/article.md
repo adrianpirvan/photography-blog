@@ -93,12 +93,20 @@ photos/6/DSCF0055.jpg
 photos/6/DSCF0111.jpg
 photos/6/DSCF0133.jpg
 photos/6/DSCF0145.jpg
-photos/6/DSCF0153.jpg
 photos/6/DSCF0162.jpg
 photos/6/DSCF0218.jpg
 [[/gallery]]
 
 The last random find of the trip came the same way, via Google Maps: La Caleta. A small old fishing village (I presume), still somehow intact despite being completely surrounded by new resort complexes. A few restaurants by the coast, a place that has made its peace with tourists without completely ruining itself in the process.
+
+[[gallery lookbook-v2 1]]
+photos/7/DSCF0946.jpg
+photos/7/DSCF0931.jpg top
+photos/7/DSCF0939.jpg center 75%
+photos/7/DSCF0962.jpg
+photos/7/DSCF0972-2.jpg top
+photos/7/DSCF0988.jpg
+[[/gallery]]
 
 Behind the village, over a small hill, there is a bay. Clear, turquoise, completely quiet. Sounds idyllic, right? What if I tell you there is no beach, no sand, just rocks, no ladders, difficult to get in the water, even harder to get out, and no facilities whatsoever. Would you still think so?
 
