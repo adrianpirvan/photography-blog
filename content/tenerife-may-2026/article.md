@@ -12,7 +12,7 @@ Seen from above, it looked like a tiny old neighbourhood crammed onto a peninsul
 From the ground, even better. Narrow streets, quiet, real people just living. At the end of the road, a half-rusted fence was the only thing separating the city from the Atlantic. From there, steps cut into the rock leading down to the water. Looking back towards the houses, some facades had been freshly painted white, while others had been stripped bare by wind, salt, and time.
 One group of locals had claimed the flattest part of the rock with the quiet authority of people who had been doing this every Sunday. Towels and chairs spread around, talking about everything and nothing, the way you do when you have nowhere to be. We watched for a while from above. Nobody acknowledged us. Nobody needed to. We tried not to spoil it, and not that all my five readers are about to take the little neighbourhood by storm ruining everyone's Sundays, but I'd rather keep it a secret... or at least secret enough for anyone not looking hard enough. You have Google Maps, don't you?
 
-[[gallery lookbook]]
+[[gallery lookbook-v2 3]]
 photos/1/DSCF8934.jpg
 photos/1/DSCF8957-2.jpg
 *photos/1/DSCF8969.jpg
@@ -35,34 +35,51 @@ That guy wasn't the only one with a bad temper that week. The weather had strong
 
 Because of the above, Teide, the volcano, the whole reason half the people are there, guess what... we never made it to the top. Ended up at Chinyero instead. No crowds, no gift shop, just an enormous black wasteland surrounded by pine forests and quiet paths. I would even argue that from there, the view of Teide was better, looming in the background of its little sibling.
 
-[[gallery lookbook-alt]]
+[[gallery lookbook-v2 5]]
 *photos/2/DSCF9268.jpg
 photos/2/DSCF9335.jpg
 photos/2/DSCF9354-2.jpg top
-photos/2/DSCF9389.jpg
 photos/2/DSCF9393.jpg
 photos/2/DSCF9401.jpg top
-photos/2/DSCF9426.jpg top
 [[/gallery]]
 
 The hotel had a few things going for it, but the main one was its view over the Los Gigantes cliffs, which, as our boat guide helpfully clarified later, are in fact gigantic. (mind = blown) In truth, probably the most spectacular natural feature on the island. Getting that view was an undeniably excellent decision. Every evening the sunset turned the huge wall into a candlelight, accompanying us at dinner.
 
 [[gallery]]
-https://picsum.photos/seed/tenerife8/1200/800
-https://picsum.photos/seed/tenerife9/900/1200
-https://picsum.photos/seed/tenerife10/1200/800
-https://picsum.photos/seed/tenerife18/900/1200
-https://picsum.photos/seed/tenerife19/1200/800
-https://picsum.photos/seed/tenerife20/900/1100
+photos/3/1.DSCF8697.jpg
+photos/3/2.DSCF9582.jpg
+photos/3/3.DSCF8728.jpg
+photos/3/4.DSCF0356.jpg
+photos/3/5.DSCF9612.jpg
+photos/3/6.DSCF8708.jpg
+photos/3/7.DSCF0905.jpg
+photos/3/8.DSCF0361.jpg center 25%
+photos/3/9.DSCF0358.jpg
 [[/gallery]]
 
-Somewhere behind those cliffs, balanced on a ridge between two valleys, is Masca. A tiny village so secluded that you have to wonder what that first guy was thinking when he decided to settle there centuries ago. Isolated, yes, but not frozen. Authentic enough to feel special, visited enough to have one or two bodegas. Not as hidden as you'd hope, not spoiled in the way you'd fear. There are, I imagine, some great photo opportunities to be made there, but as you'll remember, the weather wasn't exactly on our side, especially not high up in the mountains, so the clouds came to spoil everything before we had our chance.
+Somewhere behind those cliffs, balanced on a ridge between two valleys, is Masca. A tiny village so secluded that you have to wonder what that first guy was thinking when he decided to settle there centuries ago. Isolated, yes, but not frozen. Authentic enough to feel special, visited enough to have one or two bodegas. Not as hidden as you'd hope, not spoiled in the way you'd fear. There are, I imagine, some great photo opportunities to be made there at sunset, but as you'll remember, the weather wasn't exactly on our side, especially not high up in the mountains, so the clouds came to spoil everything before we had our chance.
+
+[[gallery split-2]]
+photos/4/DSCF9659.jpg
+photos/4/DSCF9695.jpg center 70%
+photos/4/DSCF9682.jpg center 70%
+photos/4/DSCF9691.jpg
+photos/4/DSCF9738.jpg
+[[/gallery]]
 
 Fortunately, later that evening, it made up for it. Down at the natural pools near the hotel, the sea was rough and loud. Strong waves crashing into the rocky edges of the pool, spraying water a few meters into the air. At the horizon the sun dropped. Everything was happening perfectly, nature doing its thing, loudly, magnificently, completely unhinged. I saw the opportunity. I took it.
 
-[[gallery]]
-https://picsum.photos/seed/tenerife11/1200/800
-https://picsum.photos/seed/tenerife12/1200/900
+[[gallery alt-2]]
+photos/5/DSCF9842.jpg
+photos/5/DSCF9858.jpg
+photos/5/DSCF9862.jpg
+photos/5/DSCF9866.jpg
+photos/5/DSCF9874.jpg
+photos/5/DSCF9909.jpg
+photos/5/DSCF9938.jpg
+photos/5/DSCF9946.jpg
+photos/5/DSCF9961.jpg
+photos/5/DSCF9975.jpg
 [[/gallery]]
 
 Some days you win at shuffleboard against thirty retired Brits who had been waiting for this moment their whole life, and you just stole it from them. Other days the island reminds you there's more to see. The national park of Teide is the one thing Tenerife has that Madeira doesn't. As you climb up the road towards the center of the island, at some point the green stops and the landscape turns completely alien. Desert, lava, silence. Feels like you've left the island entirely and landed somewhere else... the moon, maybe.
@@ -70,13 +87,15 @@ Some days you win at shuffleboard against thirty retired Brits who had been wait
 One day we went on a boat tour. The boat wiggled. I didn't enjoy it.
 
 [[gallery]]
-https://picsum.photos/seed/tenerife13/1200/800
-https://picsum.photos/seed/tenerife14/1200/900
-https://picsum.photos/seed/tenerife15/900/1200
-https://picsum.photos/seed/tenerife21/1200/800
-https://picsum.photos/seed/tenerife22/900/1200
-https://picsum.photos/seed/tenerife23/1200/850
-https://picsum.photos/seed/tenerife24/900/1100
+photos/6/DSCF0030.jpg
+photos/6/DSCF0034.jpg
+photos/6/DSCF0055.jpg
+photos/6/DSCF0111.jpg
+photos/6/DSCF0133.jpg
+photos/6/DSCF0145.jpg
+photos/6/DSCF0153.jpg
+photos/6/DSCF0162.jpg
+photos/6/DSCF0218.jpg
 [[/gallery]]
 
 The last random find of the trip came the same way, via Google Maps: La Caleta. A small old fishing village (I presume), still somehow intact despite being completely surrounded by new resort complexes. A few restaurants by the coast, a place that has made its peace with tourists without completely ruining itself in the process.

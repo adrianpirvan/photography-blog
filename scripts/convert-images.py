@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 try:
-    from PIL import Image
+    from PIL import Image, ImageOps
 except ImportError:
     sys.exit("Pillow is required: pip3 install Pillow")
 
@@ -33,6 +33,7 @@ def convert(source: Path):
     parent = source.parent
 
     with Image.open(source) as img:
+        img = ImageOps.exif_transpose(img)
         if img.mode in ('RGBA', 'P'):
             img = img.convert('RGB')
         orig_w, orig_h = img.size

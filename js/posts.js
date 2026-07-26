@@ -61,7 +61,7 @@
           const rest     = featured ? line.slice(1) : line;
           const parts    = rest.trim().split(/\s+/);
           const src      = parts[0].startsWith('http') ? parts[0] : `content/${slug}/${parts[0]}`;
-          const position = parts[1] || null;
+          const position = parts.length > 1 ? parts.slice(1).join(' ') : null;
           return { src, featured, position };
         });
 
@@ -77,13 +77,18 @@
 
   function buildInlineGallery(section, loading) {
     if (section.layout === 'lookbook' || section.layout === 'lookbook-alt') return buildLookbookGallery(section.images, loading, section.layout);
+    if (section.layout.startsWith('lookbook-v2')) {
+      const rightCount = parseInt(section.layout.split(/\s+/)[1]) || 0;
+      return buildLookbookV2Gallery(section.images, loading, rightCount);
+    }
 
     const imgs = section.images.map(({ src, position }) => {
       const srcsetAttr = src.startsWith('http') ? '' : ` srcset="${webpSrcset(src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
       const posStyle   = position ? ` style="object-position: ${position}"` : '';
       return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="${loading}" draggable="false"${posStyle}>`;
     }).join('');
-    return `<div class="inline-gallery">${imgs}</div>`;
+    const extraClass = section.layout !== 'default' ? ` inline-gallery--${section.layout}` : '';
+    return `<div class="inline-gallery${extraClass}">${imgs}</div>`;
   }
 
   function buildLookbookGallery(images, loading, layout = 'lookbook') {
@@ -101,6 +106,32 @@
     }).join('');
 
     return `<div class="inline-gallery inline-gallery--${layout}">${featured_html}<div class="lb-thumbs">${thumbs_html}</div></div>`;
+  }
+
+  function buildLookbookV2Gallery(images, loading, rightCount) {
+    const featIdx  = images.findIndex(img => img.featured);
+    const featured = images[featIdx >= 0 ? featIdx : 0];
+    const thumbs   = images.filter(img => img !== featured);
+
+    const N            = rightCount > 0 ? rightCount : thumbs.length;
+    const rightPhotos  = thumbs.slice(0, N);
+    const belowPhotos  = thumbs.slice(N);
+
+    const buildImgs = (photos) => photos.map(({ src, position }) => {
+      const srcsetAttr = src.startsWith('http') ? '' : ` srcset="${webpSrcset(src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
+      const posStyle   = position ? ` style="object-position: ${position}"` : '';
+      return `<img class="gallery-img" src="${src}"${srcsetAttr} alt="" loading="lazy" draggable="false"${posStyle}>`;
+    }).join('');
+
+    const featSrcset = featured.src.startsWith('http') ? '' : ` srcset="${webpSrcset(featured.src)}" sizes="(max-width: 600px) 100vw, (max-width: 900px) 80vw, 60vw"`;
+    const featPos    = featured.position ? ` style="object-position: ${featured.position}"` : '';
+    const featured_html = `<img class="gallery-img lb-featured" src="${featured.src}"${featSrcset} alt="" loading="${loading}" draggable="false"${featPos}>`;
+
+    const below_html = belowPhotos.length > 0
+      ? `<div class="lbv2-below">${buildImgs(belowPhotos)}</div>`
+      : '';
+
+    return `<div class="inline-gallery inline-gallery--lookbook-v2"><div class="lbv2-top">${featured_html}<div class="lbv2-right" data-count="${rightPhotos.length}">${buildImgs(rightPhotos)}</div></div>${below_html}</div>`;
   }
 
   // ─── srcset builder ─────────────────────────────────────────────────────────
