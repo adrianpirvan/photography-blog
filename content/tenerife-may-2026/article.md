@@ -5,17 +5,17 @@
 
 ---
 
-When bored, I browse Google Maps in satellite view. That's my complicated, inefficient, and rather stupid way of discovering interesting places in areas I'm about to visit. Which is exactly how I found one of the few places on this island called Tenerife which hasn’t been ruined
+When bored, I browse Google Maps in satellite view. That's my complicated, inefficient, and rather stupid way of discovering interesting places in areas I'm about to visit. Which is exactly how I found one of my favourite places on this island called Tenerife which hasn’t been ruined...
 
-...yet.
+<em>...yet</em>
 
-Seen from above, it looked like a tiny old neighbourhood crammed onto a peninsula, every inch of rock available covered by squarish houses with green and red roofs, stacked against the cliff edge as if empty space is somehow offensive.
+Seen from above, it looked like a tiny old neighbourhood crammed onto a peninsula. Every inch of rock available covered by squarish houses with green and red roofs, stacked against the cliff edge.
 
 From the ground, even better. Narrow streets. Quiet. Real people just living. At the end of the road, a half-rusted fence was the only thing separating the city from the Atlantic. From there, steps cut into the rock led down to the water. Looking back towards the houses, some facades had been freshly painted white, while others had been stripped bare by wind, salt, and time.
 
 A group of locals had claimed the flattest part of the rock with the quiet authority of people who had been doing this every Sunday. Towels and chairs spread around. Time moves at a different speed for these guys, talking about everything and nothing at all, the way you do when you have nowhere to be. We watched for a while from above. We tried not to spoil it. Standing there, I had a strange moment of genuine confusion. For a while I was unsure which country I was in. Every single thing I was looking at, my brain was incorrectly labelling "Italy". It took a while to convince myself otherwise. Writing this, I'm still not fully convinced it wasn't.
 
-I'd rather keep this place a secret, not because I'm afraid that all five of my readers are about to take the little neighbourhood by storm ruining everyone's Sundays, but it deserves to be at least secret enough for anyone not looking hard enough. You do have Google Maps, don't you?
+I'd rather keep this place a secret, not because I'm afraid that all five of my readers are about to take the little neighbourhood by storm ruining everyone's Sundays, but it deserves to be at least secret enough for anyone not looking hard enough. You do have Google Maps, don't you? And unlike me, you know what you are looking for:
 
 [[gallery lookbook-v2 3]]
 photos/1/DSCF8934.jpg
@@ -28,17 +28,13 @@ photos/1/DSCF9003.jpg
 
 And so, we were off to a good start. For the rest of the trip we were half-expecting to stumble onto something similar. But the honest answer is: we didn't. Not really. Most of the island has been swallowed by ginormous resorts, and with it, any shred of originality has been lost. The fact that we were staying in one doesn't exactly give us the moral high ground.
 
-The locals, as it turned out, had noticed too. Somewhere on a dusty hike through an otherwise relatively quiet stretch of the island, we were welcomed by a stone wall that said: "tourists go home". Fair enough, someone's having a bad day. Nothing I haven't heard before. And then we see the next wall:
+The locals, as it turned out, had some thoughts about it too. Somewhere on a dusty hike through an otherwise relatively quiet stretch of the island, we were welcomed by a graffiti-covered concrete wall that said: tourists go home. Fair enough, someone's having a bad day. Nothing I haven't heard before. And then we see the next wall:
 
 <em>Kill a tourist</em>
 
-Suddenly very aware of how quiet the path was, we decided this was a good moment to be somewhere else. Started walkin a little faster after that, like, purposefully.
+Suddenly, very aware of how quiet the path was, we decided this was a good moment to be somewhere else. Started walkin a little faster after that, like, purposefully. Unironically, I forgot to take any photos...
 
-Unironically, I forgot to take any photos...
-
-That guy wasn't the only one with a bad temper that week. The weather had strong opinions too. We came with a high-level plan but ended up improvising every day, chasing the sunny side of the island and dodging the rain.
-
-Because of the weather, Teide, the volcano, the whole reason half the people are there, guess what... we never made it to the top. Ended up at Chinyero instead. No crowds, no gift shop, just an enormous black wasteland surrounded by pine forests and quiet paths. I would even argue that from there, the view of Teide was better, looming in the background of its little sibling.
+That guy wasn't the only one with a bad temper that week. The weather had strong opinions too. We came with a high-level plan but ended up improvising every day, chasing the sunny side of the island and dodging the rain. I must admit, we did a pretty decent job, much better than most of the weather apps we could find. Our strategy worked surprisingly well, but there was one exception. Teide, the volcano, the whole reason half the people are there, guess what... we never made it to the top. Ended up at Chinyero instead. No crowds, no gift shop, just an enormous black wasteland surrounded by pine forests and quiet paths. I would even argue that from there, the view of Teide was better, looming in the background of its little sibling.
 
 [[gallery lookbook-v2 5]]
 *photos/2/DSCF9268.jpg
@@ -48,7 +44,7 @@ photos/2/DSCF9393.jpg
 photos/2/DSCF9401.jpg top
 [[/gallery]]
 
-The hotel had a few things going for it, and the main one was its view of the Los Gigantes cliffs, which, as our boat guide helpfully clarified later, are in fact gigantic... (mind = blown). In truth, probably the most spectacular natural feature on the island. Getting that view was an undeniably excellent decision. Every evening the sunset turned the huge wall into a candlelight, accompanying us at dinner.
+The hotel had a few things going for it, and the main one was its view of the Los Gigantes cliffs, which, as our boat guide helpfully clarified later, are in fact gigantic... mind = blown. It is probably one of the most spectacular natural feature on the island. Getting that view was an undeniably excellent decision. Every evening the sunset turned the huge wall into a candlelight, accompanying us at dinner.
 
 [[gallery]]
 photos/3/1.DSCF8697.jpg
@@ -115,12 +111,12 @@ photos/7/DSCF0972-2.jpg top
 photos/7/DSCF0988.jpg
 [[/gallery]]
 
-Behind the village, over a small hill, there is a bay. It looks clear, turquoise, completely quiet. Sounds idyllic for a dip, right? Until you notice there is no beach, no soft sand, just rocks. No ladders. High, sharp rocks surrounding the water make jumping seem like the easiest way in. Getting back out is a different problem, but still a problem nonetheless. There are no facilities, nothing designed to make your life easier. Sounds less ideal now.
+Behind the village, over a small hill, there is a bay. Clear, turquoise, completely quiet, barely anyone around. Sounds idyllic for a dip, right? Until you notice there is no beach, no soft sand. High, sharp rocks surrounding the water make jumping seem like the easiest way in. There are no ladders. Getting back out is a different problem, but still a problem nonetheless. There are no facilities, nothing designed to make your life easier. That's probably why there are so few people there. It's less ideal now...
 
-Or is it, actually? As a matter of fact, I like it better this way. The island is obviously, undeniably beautiful. But somewhere between resorts and angry walls telling us to go home, a question starts bothering me. What does a place like this lose when everything becomes so easy? Do we really need every place to be easier? 
+Or is it, actually? As a matter of fact, I like it better this way. The island is obviously, undeniably beautiful. But somewhere between resorts and angry walls telling us to go home, a question starts bothering me. What does a place like Tenerife lose when everything becomes so easy?
 
 Maybe some places are better left a little inconvenient. 
 
-Maybe there should be no ladders.
+Maybe, just maybe, there should be <strong>no ladders</strong>.
 
 Because we jumped in anyway.
