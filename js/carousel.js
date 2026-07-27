@@ -109,7 +109,13 @@ document.addEventListener('posts:loaded', () => {
 
   document.querySelectorAll('.inline-gallery').forEach(gallery => {
     const imgs = Array.from(gallery.querySelectorAll('.gallery-img'));
-    const lbData = imgs.map(img => ({ src: img.src, alt: img.alt }));
+    const lbData = imgs.map(img => {
+      const isLocal = img.src.startsWith(location.origin + '/');
+      return {
+        src: isLocal ? img.src.replace(/\.[^.]+$/, '') + '-2400.webp' : img.src,
+        alt: img.alt
+      };
+    });
     imgs.forEach((img, index) => {
       img.addEventListener('click', () => openLightbox(lbData, index));
     });
