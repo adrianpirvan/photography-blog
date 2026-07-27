@@ -5,7 +5,7 @@
 
 ---
 
-When bored, I browse Google Maps in satellite view. That's my complicated, inefficient, and rather stupid way of discovering interesting places in areas I'm about to visit. Which is exactly how I found one of my favourite places on this island called Tenerife which hasn’t been ruined...
+When bored, I browse Google Maps in satellite view. That's my complicated, inefficient, and rather stupid way of discovering interesting places in areas I'm about to visit. Which is exactly how I found one of my favourite places in Tenerife which hasn’t been ruined...
 
 <em>...yet</em>
 
