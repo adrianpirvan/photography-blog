@@ -382,6 +382,15 @@
     height: auto;
     overflow: visible;
   }
+
+  /* Hide JS-controlled galleries until justified.js applies layout,
+     then fade in to avoid flash of equal-width columns. */
+  .inline-gallery:not([class*="inline-gallery--"]),
+  .inline-gallery--split-2,
+  .inline-gallery--lookbook-v2 {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
 }
 
 /* ============================================
