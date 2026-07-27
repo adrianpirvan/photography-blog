@@ -78,6 +78,17 @@ img {
   letter-spacing: -0.015em;
 }
 
+/* Mobile-only title break: || in article.md → hidden span on desktop, block on mobile */
+.title-m-br {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .title-m-br {
+    display: block;
+  }
+}
+
 .post-body {
   text-align: center;
   max-width: var(--content-max);

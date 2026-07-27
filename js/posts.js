@@ -17,7 +17,9 @@
 
     // Title: first "# " line
     const titleMatch = header.match(/^# (.+)/m);
-    const title = titleMatch ? titleMatch[1].trim().replace(/\s*\|\s*/g, '<br>') : '';
+    const title = titleMatch ? titleMatch[1].trim()
+      .replace(/\s*\|\|\s*/g, '<span class="title-m-br"></span>')
+      .replace(/\s*\|\s*/g, '<br>') : '';
 
     // Category and date
     const catMatch  = header.match(/\*\*Category:\*\*\s*(.+)/);

@@ -497,3 +497,24 @@
     height: 40px;
   }
 }
+
+/* ============================================
+   TENERIFE ARTICLE — Cap gallery width at 1280px
+   On screens wider than a 13" MacBook, galleries stay
+   at 1280px and centre rather than stretching full-width.
+   Applies to this article only.
+   ============================================ */
+@media (min-width: 1281px) {
+  [data-slug="tenerife-may-2026"] .inline-gallery {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 601px) {
+  [data-slug="tenerife-may-2026"] .post-body {
+    max-width: 1280px;
+    padding: 0 64px;
+  }
+}
